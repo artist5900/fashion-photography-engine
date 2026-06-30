@@ -1,0 +1,15 @@
+{
+  "id": "01_hero_low_angle",
+  "name": "Hero Low Angle",
+  "purpose": "Create a strong first impression and make the outfit feel powerful.",
+  "camera": {
+    "lens": "35mm",
+    "height": "ground level",
+    "pitch": "upward",
+    "distance": "close",
+    "subject_ratio": "75%"
+  },
+  "pose": "standing close to camera, relaxed shoulders, one hand near pocket, confident gaze",
+  "garment_focus": ["overall silhouette", "volume", "shoe scale", "upper body attitude"],
+  "prompt_notes": "Use strong perspective, visible sky, urban edge, hard daylight, editorial fashion mood."
+}
