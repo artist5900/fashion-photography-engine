@@ -67,6 +67,16 @@ python3 src/plan_to_prompts.py examples/lookbook_plan.json --out examples/lookbo
 
 The exporter reads each recommendation in the plan and writes one Markdown prompt per ranked shot.
 
+## Sprint 3
+
+Sprint 3 converts a complete lookbook plan into multiple production-ready prompts.
+
+```bash
+python3 src/plan_to_prompts.py examples/lookbook_plan.json --out examples/lookbook_prompts.md
+```
+
+The output is saved to `examples/lookbook_prompts.md`.
+
 ## Garment Parser v1
 
 Garment Parser v1 turns one or more garment product image paths into a structured `garment.json`.
