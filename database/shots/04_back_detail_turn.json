@@ -1,0 +1,16 @@
+{
+  "id": "04_back_detail_turn",
+  "name": "Back Detail Turn",
+  "purpose": "Show back construction, hood shape, shoulder line, labels, or rear garment details.",
+  "camera": {
+    "lens": "50mm",
+    "height": "chest level",
+    "pitch": "neutral",
+    "distance": "medium",
+    "subject_ratio": "76%"
+  },
+  "pose": "back mostly toward camera, head turned slightly over shoulder, arms relaxed",
+  "garment_focus": ["back panel", "hood", "rear silhouette", "shoulder fit"],
+  "prompt_notes": "Avoid hiding the garment with hair or accessories."
+}
+

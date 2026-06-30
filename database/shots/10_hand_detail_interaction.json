@@ -1,0 +1,16 @@
+{
+  "id": "10_hand_detail_interaction",
+  "name": "Hand Detail Interaction",
+  "purpose": "Show tactile details such as zipper, pocket, cuff, waist tie, button, or hardware.",
+  "camera": {
+    "lens": "85mm",
+    "height": "detail level",
+    "pitch": "neutral",
+    "distance": "close",
+    "subject_ratio": "90%"
+  },
+  "pose": "hands naturally adjusting or touching the garment detail",
+  "garment_focus": ["hardware", "cuff", "pocket", "texture"],
+  "prompt_notes": "Hands should feel elegant and realistic, with the product detail as the focal point."
+}
+

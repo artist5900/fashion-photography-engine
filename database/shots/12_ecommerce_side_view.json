@@ -1,0 +1,16 @@
+{
+  "id": "12_ecommerce_side_view",
+  "name": "Ecommerce Side View",
+  "purpose": "Show garment length, side fit, sleeve shape, pant break, or profile silhouette.",
+  "camera": {
+    "lens": "70mm",
+    "height": "waist level",
+    "pitch": "neutral",
+    "distance": "medium",
+    "subject_ratio": "78%"
+  },
+  "pose": "standing in clean side profile, arms slightly away from body, neutral expression",
+  "garment_focus": ["side profile", "length", "fit", "hemline"],
+  "prompt_notes": "Keep lighting neutral and product information clear."
+}
+

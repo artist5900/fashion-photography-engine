@@ -1,0 +1,16 @@
+{
+  "id": "03_three_quarter_turn",
+  "name": "Three Quarter Turn",
+  "purpose": "Show the side profile and front construction of the outfit in one readable frame.",
+  "camera": {
+    "lens": "50mm",
+    "height": "chest level",
+    "pitch": "neutral",
+    "distance": "medium",
+    "subject_ratio": "78%"
+  },
+  "pose": "body turned 45 degrees, front shoulder open to camera, one hand relaxed by side",
+  "garment_focus": ["side seam", "front closure", "fit through waist", "layering depth"],
+  "prompt_notes": "Keep the turn natural and make the garment shape easy to understand."
+}
+

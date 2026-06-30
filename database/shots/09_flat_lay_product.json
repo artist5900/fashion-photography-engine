@@ -1,0 +1,16 @@
+{
+  "id": "09_flat_lay_product",
+  "name": "Flat Lay Product",
+  "purpose": "Show garment shape, materials, and styling combinations without a model.",
+  "camera": {
+    "lens": "35mm",
+    "height": "overhead",
+    "pitch": "top down",
+    "distance": "medium",
+    "subject_ratio": "80%"
+  },
+  "pose": "not applicable, product arranged cleanly on surface",
+  "garment_focus": ["shape", "material", "color", "styling set"],
+  "prompt_notes": "Arrange the garment naturally and avoid messy folds."
+}
+

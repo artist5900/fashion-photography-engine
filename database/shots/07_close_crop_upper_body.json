@@ -1,0 +1,16 @@
+{
+  "id": "07_close_crop_upper_body",
+  "name": "Close Crop Upper Body",
+  "purpose": "Highlight neckline, collar, shoulders, graphics, jewelry, or upper garment construction.",
+  "camera": {
+    "lens": "85mm",
+    "height": "eye level",
+    "pitch": "neutral",
+    "distance": "close",
+    "subject_ratio": "85%"
+  },
+  "pose": "upper body angled slightly, chin relaxed, one hand optionally near collar",
+  "garment_focus": ["neckline", "collar", "print", "fabric texture"],
+  "prompt_notes": "Keep the face and upper garment sharp with premium skin and fabric detail."
+}
+

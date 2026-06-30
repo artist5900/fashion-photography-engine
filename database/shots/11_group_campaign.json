@@ -1,0 +1,16 @@
+{
+  "id": "11_group_campaign",
+  "name": "Group Campaign",
+  "purpose": "Show multiple looks together for collection storytelling and brand world building.",
+  "camera": {
+    "lens": "35mm",
+    "height": "chest level",
+    "pitch": "neutral",
+    "distance": "wide",
+    "subject_ratio": "70%"
+  },
+  "pose": "two to four models arranged with varied heights, relaxed spacing, coordinated attitude",
+  "garment_focus": ["collection range", "color story", "styling contrast", "brand mood"],
+  "prompt_notes": "Keep every outfit readable and avoid crowding the frame."
+}
+

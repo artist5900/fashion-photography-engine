@@ -1,0 +1,16 @@
+{
+  "id": "06_walking_profile",
+  "name": "Walking Profile",
+  "purpose": "Show movement, fabric swing, and side silhouette for lifestyle or lookbook use.",
+  "camera": {
+    "lens": "70mm",
+    "height": "waist level",
+    "pitch": "neutral",
+    "distance": "medium wide",
+    "subject_ratio": "68%"
+  },
+  "pose": "walking left to right in profile, natural stride, gaze forward",
+  "garment_focus": ["side silhouette", "fabric movement", "hemline", "footwear"],
+  "prompt_notes": "Freeze the garment clearly while keeping a natural walking rhythm."
+}
+

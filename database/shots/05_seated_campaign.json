@@ -1,0 +1,16 @@
+{
+  "id": "05_seated_campaign",
+  "name": "Seated Campaign",
+  "purpose": "Create a relaxed campaign image with strong styling attitude and visible garment form.",
+  "camera": {
+    "lens": "50mm",
+    "height": "waist level",
+    "pitch": "slightly upward",
+    "distance": "medium",
+    "subject_ratio": "70%"
+  },
+  "pose": "seated with one knee forward, torso slightly angled, hands natural",
+  "garment_focus": ["drape", "layering", "knees and sleeves", "overall attitude"],
+  "prompt_notes": "Use the seat as a styling prop, not the main subject."
+}
+

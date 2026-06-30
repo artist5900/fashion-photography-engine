@@ -1,0 +1,16 @@
+{
+  "id": "08_low_angle_stride",
+  "name": "Low Angle Stride",
+  "purpose": "Make the silhouette feel bold, tall, and campaign-ready.",
+  "camera": {
+    "lens": "28mm",
+    "height": "knee level",
+    "pitch": "upward",
+    "distance": "close medium",
+    "subject_ratio": "82%"
+  },
+  "pose": "one foot forward toward camera, shoulders relaxed, confident expression",
+  "garment_focus": ["shoe scale", "pants volume", "outerwear length", "hero silhouette"],
+  "prompt_notes": "Use perspective carefully; powerful but not distorted."
+}
+
