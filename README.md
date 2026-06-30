@@ -27,6 +27,48 @@ templates/          Prompt and shot-plan templates
 examples/           Example shot plans and generated prompt sets
 ```
 
+## Quick Start
+
+No installation is required. The first builder uses only the Python standard library.
+
+List available shots:
+
+```bash
+python3 src/cli.py --list shots
+```
+
+List available poses, scenes, or brand styles:
+
+```bash
+python3 src/cli.py --list poses
+python3 src/cli.py --list scenes
+python3 src/cli.py --list brands
+```
+
+Generate a prompt:
+
+```bash
+python3 src/cli.py \
+  --shot 03_three_quarter_turn \
+  --scene clean_white_studio \
+  --pose 03_three_quarter_shift \
+  --brand minimal_luxury \
+  --garment "tailored black wool blazer with straight-leg trousers"
+```
+
+The output is a structured fashion photography prompt with garment, shot, scene, pose, lighting, camera, and brand-style guidance.
+
+## Sprint 1
+
+Sprint 1 adds the first usable prompt generation system:
+
+- 10 additional shot definitions
+- 20 pose definitions
+- 10 scene definitions
+- 5 brand style files
+- Improved prompt builder
+- Simple CLI for listing records and generating prompts
+
 ## v0.1 Scope
 
 Version 0.1 ships the first practical foundation:
@@ -59,9 +101,10 @@ This format is intentionally simple so it can be read by humans, edited by contr
 ## Example Use
 
 1. Choose a shot definition from `database/shots/`.
-2. Replace the product, brand, model, scene, and styling details.
-3. Combine the shot definition with `templates/fashion_prompt_template.md`.
-4. Use the final prompt for AI image generation or as a human production brief.
+2. Choose a scene from `database/scenes/`.
+3. Optionally choose a pose and brand style.
+4. Run `python3 src/cli.py` with a garment description.
+5. Use the final prompt for AI image generation or as a human production brief.
 
 ## Design Principles
 
@@ -74,7 +117,6 @@ This format is intentionally simple so it can be read by humans, edited by contr
 
 - Add pose, scene, lens, and brand-style databases
 - Add complete example campaigns
-- Add prompt-generation scripts
 - Add validation for shot definition files
 - Add style packs for ecommerce, luxury, streetwear, activewear, and beauty
 
