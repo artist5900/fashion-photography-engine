@@ -1,0 +1,9 @@
+{
+  "id": "urban_tiled_bus_stop",
+  "name": "Urban Tiled Bus Stop",
+  "environment": "blue tiled transit shelter with torn posters, hard sunlight, clear sky",
+  "surface": "terrazzo or concrete floor",
+  "mood": "gritty editorial streetwear",
+  "lighting": "hard daylight with strong shadows",
+  "best_for": ["streetwear", "oversized silhouettes", "denim", "technical sneakers"]
+}
