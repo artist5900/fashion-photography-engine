@@ -54,6 +54,20 @@ Write the plan to a file:
 python3 src/planner.py examples/lookbook_request.json --out examples/lookbook_plan.json
 ```
 
+Validate the example plan:
+
+```bash
+python3 src/validate_plan.py
+```
+
+Validate another plan file:
+
+```bash
+python3 src/validate_plan.py path/to/plan.json
+```
+
+The validator prints `PASS` when the plan is structurally complete and avoids obvious shot-pose mismatches. It prints `FAIL` with reasons when a recommendation is missing required fields or uses an incompatible pose.
+
 ## Method
 
 Planner v1 uses a simple scoring model:
