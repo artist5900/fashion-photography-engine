@@ -1,4 +1,5 @@
 import json
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -55,6 +56,18 @@ def list_records(collection: str) -> list[dict[str, str]]:
     return records
 
 
+def _join_items(value: Any) -> str:
+    if isinstance(value, list):
+        return ", ".join(str(item) for item in value)
+    if value is None:
+        return ""
+    return str(value)
+
+
+def _clean_sentence(value: Any) -> str:
+    return str(value or "").strip().rstrip(".")
+
+
 def _camera_text(shot: dict[str, Any]) -> str:
     camera = shot.get("camera")
     if isinstance(camera, dict):
@@ -67,6 +80,20 @@ def _camera_text(shot: dict[str, Any]) -> str:
         ]
         return ", ".join([part for part in parts if part])
     return str(shot.get("camera_language", "natural commercial fashion lens language"))
+
+
+def _lens_text(lens: dict[str, Any] | None, shot: dict[str, Any]) -> str:
+    if not lens:
+        return _camera_text(shot)
+
+    parts = [
+        lens.get("name"),
+        lens.get("focal_length"),
+        lens.get("look"),
+        lens.get("camera_guidance"),
+        lens.get("depth_of_field"),
+    ]
+    return ", ".join([_clean_sentence(part) for part in parts if part])
 
 
 def _brand_text(brand: dict[str, Any] | None, brand_note: str) -> str:
@@ -91,11 +118,15 @@ def build_prompt(
     brand_note: str = "professional fashion brand",
     pose_path: str | None = None,
     brand_path: str | None = None,
+    lens_path: str | None = None,
+    model_description: str = "professional fashion model",
+    output_format: str = "paragraph",
 ) -> str:
     shot = load_record("shots", shot_path)
     scene = load_record("scenes", scene_path)
     pose = load_record("poses", pose_path)
     brand = load_record("brands", brand_path)
+    lens = load_record("lenses", lens_path)
 
     if not shot or not scene:
         raise ValueError("A shot and scene are required.")
@@ -109,42 +140,59 @@ def build_prompt(
     lighting = shot.get("lighting") or scene.get("lighting")
     scene_text = scene.get("environment") or scene.get("name")
     garment_focus = shot.get("garment_focus") or shot.get("styling_notes") or []
-    if isinstance(garment_focus, list):
-        garment_focus = ", ".join(garment_focus)
+    composition = shot.get("composition", shot.get("prompt_notes", "clean commercial composition"))
+    prompt_notes = shot.get("prompt")
+    negative_notes = [shot.get("negative_prompt")]
+    if lens and lens.get("avoid"):
+        negative_notes.append("lens avoid: " + _join_items(lens.get("avoid")))
 
-    lines = [
-        "Professional fashion photography prompt:",
-        f"- Garment: {garment_description}",
-        f"- Shot: {shot.get('name')}",
-        f"- Purpose: {purpose}",
-        f"- Scene: {scene_text}",
-        f"- Mood: {scene.get('mood', 'commercial fashion')}",
-        f"- Pose: {pose_direction}",
-        f"- Composition: {shot.get('composition', shot.get('prompt_notes', 'clean commercial composition'))}",
-        f"- Garment focus: {garment_focus}",
-        f"- Lighting: {lighting}",
-        f"- Camera: {_camera_text(shot)}",
-        f"- Brand style: {_brand_text(brand, brand_note)}",
+    sections = [
+        f"Create a production-ready professional fashion photograph of {_clean_sentence(model_description)} wearing {_clean_sentence(garment_description)}.",
+        f"Shot: {shot.get('name')} with the goal to {_clean_sentence(purpose).lower()}.",
+        f"Pose: {_clean_sentence(pose_direction)}.",
+        f"Lens and camera: {_clean_sentence(_lens_text(lens, shot))}.",
+        f"Scene: {_clean_sentence(scene_text)}; surface: {_clean_sentence(scene.get('surface', 'clean production surface'))}; mood: {_clean_sentence(scene.get('mood', 'commercial fashion'))}.",
+        f"Brand style: {_clean_sentence(_brand_text(brand, brand_note))}.",
+        f"Composition: {_clean_sentence(composition)}.",
+        f"Garment focus: {_clean_sentence(_join_items(garment_focus))}.",
+        f"Lighting: {_clean_sentence(lighting)}.",
     ]
 
-    if shot.get("prompt"):
-        lines.append(f"- Shot prompt notes: {shot['prompt']}")
+    if prompt_notes:
+        sections.append(f"Additional shot notes: {_clean_sentence(prompt_notes)}.")
 
-    negative = shot.get("negative_prompt")
-    if negative:
-        lines.append(f"- Avoid: {negative}")
+    negative_text = "; ".join([note for note in negative_notes if note])
+    if negative_text:
+        sections.append(f"Avoid: {_clean_sentence(negative_text)}.")
 
-    return "\n".join(lines)
+    if output_format == "bullets":
+        return "Production-ready fashion photography prompt:\n- " + "\n- ".join(sections)
+    return " ".join(sections)
+
+
+def build_prompt_from_file(path: str | Path) -> str:
+    request = load_json(path)
+    return build_prompt(
+        shot_path=request["shot"],
+        pose_path=request.get("pose"),
+        lens_path=request.get("lens"),
+        scene_path=request["scene"],
+        brand_path=request.get("brand"),
+        garment_description=request["garment"],
+        model_description=request.get("model", "professional fashion model"),
+        brand_note=request.get("brand_note", "professional fashion brand"),
+        output_format=request.get("output_format", "paragraph"),
+    )
+
+
+def main(argv: list[str]) -> int:
+    if len(argv) != 2:
+        print("Usage: python src/prompt_builder.py examples/example.json", file=sys.stderr)
+        return 2
+
+    print(build_prompt_from_file(argv[1]))
+    return 0
 
 
 if __name__ == "__main__":
-    print(
-        build_prompt(
-            "01_hero_low_angle",
-            "urban_tiled_bus_stop",
-            "oversized washed grey distressed hoodie and wide leg pants",
-            brand_path="youth_streetwear",
-            pose_path="02_confident_pocket_hand",
-        )
-    )
-
+    raise SystemExit(main(sys.argv))
