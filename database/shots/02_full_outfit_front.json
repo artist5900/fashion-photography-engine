@@ -1,0 +1,15 @@
+{
+  "id": "02_full_outfit_front",
+  "name": "Full Outfit Front",
+  "purpose": "Show the complete outfit clearly for lookbook and catalog use.",
+  "camera": {
+    "lens": "35mm",
+    "height": "waist level",
+    "pitch": "neutral",
+    "distance": "medium",
+    "subject_ratio": "80%"
+  },
+  "pose": "standing toward camera, feet apart, arms relaxed, neutral expression",
+  "garment_focus": ["front design", "fit", "proportion", "overall silhouette"],
+  "prompt_notes": "Keep the outfit readable and avoid excessive crop."
+}
