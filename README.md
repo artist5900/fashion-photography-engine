@@ -4,6 +4,8 @@ Fashion Photography Engine is an open-source prompt and shot-planning library fo
 
 The project helps creative teams, photographers, stylists, ecommerce brands, and AI image-generation builders turn a loose campaign idea into structured commercial shot plans and production-ready prompts.
 
+Current release: `v0.2.0`
+
 ## What This Project Does
 
 - Defines reusable fashion photography shot types
@@ -160,6 +162,10 @@ This format is intentionally simple so it can be read by humans, edited by contr
 - Sprint 1: Prompt Builder
 - Sprint 2: Photography Planner
 - Sprint 3: Plan to Prompts Exporter
+
+## Current Status
+
+Fashion Photography Engine now supports a lightweight workflow from garment description to ranked shot plan to multiple production-ready prompts.
 
 ## License
 
