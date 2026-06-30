@@ -59,6 +59,24 @@ python3 src/prompt_builder.py examples/example.json
 
 The output is one production-ready fashion photography prompt combining garment, shot, pose, lens, scene, and brand-style guidance.
 
+## Garment Parser v1
+
+Garment Parser v1 turns one or more garment product image paths into a structured `garment.json`.
+
+Run the included example:
+
+```bash
+python3 src/garment_parser.py examples/garment_input.json --out examples/garment.json
+```
+
+Or pass image paths directly:
+
+```bash
+python3 src/garment_parser.py product_front.jpg product_back.jpg --out garment.json
+```
+
+The v1 parser uses filenames and optional manifest notes. It does not use a vision model yet; the output schema is designed so a future image model can plug in without changing the prompt-builder contract.
+
 ## Sprint 1
 
 Sprint 1 adds the first usable prompt generation system:
