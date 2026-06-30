@@ -31,6 +31,12 @@ examples/           Example shot plans and generated prompt sets
 
 No installation is required. The first builder uses only the Python standard library.
 
+Generate a production-ready prompt from the included example:
+
+```bash
+python3 src/prompt_builder.py examples/example.json
+```
+
 List available shots:
 
 ```bash
@@ -48,15 +54,10 @@ python3 src/cli.py --list brands
 Generate a prompt:
 
 ```bash
-python3 src/cli.py \
-  --shot 03_three_quarter_turn \
-  --scene clean_white_studio \
-  --pose 03_three_quarter_shift \
-  --brand minimal_luxury \
-  --garment "tailored black wool blazer with straight-leg trousers"
+python3 src/prompt_builder.py examples/example.json
 ```
 
-The output is a structured fashion photography prompt with garment, shot, scene, pose, lighting, camera, and brand-style guidance.
+The output is one production-ready fashion photography prompt combining garment, shot, pose, lens, scene, and brand-style guidance.
 
 ## Sprint 1
 
@@ -66,6 +67,7 @@ Sprint 1 adds the first usable prompt generation system:
 - 20 pose definitions
 - 10 scene definitions
 - 5 brand style files
+- 5 lens definitions
 - Improved prompt builder
 - Simple CLI for listing records and generating prompts
 
@@ -101,9 +103,9 @@ This format is intentionally simple so it can be read by humans, edited by contr
 ## Example Use
 
 1. Choose a shot definition from `database/shots/`.
-2. Choose a scene from `database/scenes/`.
-3. Optionally choose a pose and brand style.
-4. Run `python3 src/cli.py` with a garment description.
+2. Choose a pose, lens, scene, and brand style.
+3. Add those IDs to an example JSON file.
+4. Run `python3 src/prompt_builder.py examples/example.json`.
 5. Use the final prompt for AI image generation or as a human production brief.
 
 ## Design Principles
