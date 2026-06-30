@@ -33,6 +33,15 @@ examples/           Example shot plans and generated prompt sets
 
 No installation is required. The first builder uses only the Python standard library.
 
+Run the visual app:
+
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+The app lets you enter a garment description, choose a brand style and campaign type, generate a ranked lookbook plan, generate prompts, and download the request, plan, and prompt files.
+
 Generate a production-ready prompt from the included example:
 
 ```bash
