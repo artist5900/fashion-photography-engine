@@ -59,6 +59,14 @@ python3 src/prompt_builder.py examples/example.json
 
 The output is one production-ready fashion photography prompt combining garment, shot, pose, lens, scene, and brand-style guidance.
 
+Convert a full lookbook plan into multiple production prompts:
+
+```bash
+python3 src/plan_to_prompts.py examples/lookbook_plan.json --out examples/lookbook_prompts.md
+```
+
+The exporter reads each recommendation in the plan and writes one Markdown prompt per ranked shot.
+
 ## Garment Parser v1
 
 Garment Parser v1 turns one or more garment product image paths into a structured `garment.json`.
