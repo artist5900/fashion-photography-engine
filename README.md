@@ -153,10 +153,13 @@ This format is intentionally simple so it can be read by humans, edited by contr
 
 ## Roadmap
 
-- Add pose, scene, lens, and brand-style databases
-- Add complete example campaigns
-- Add validation for shot definition files
 - Add style packs for ecommerce, luxury, streetwear, activewear, and beauty
+
+## Milestone History
+
+- Sprint 1: Prompt Builder
+- Sprint 2: Photography Planner
+- Sprint 3: Plan to Prompts Exporter
 
 ## License
 
