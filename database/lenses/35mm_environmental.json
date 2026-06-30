@@ -1,0 +1,11 @@
+{
+  "id": "35mm_environmental",
+  "name": "35mm Environmental Fashion",
+  "focal_length": "35mm",
+  "look": "natural perspective with visible scene context",
+  "best_for": ["street style", "lookbook movement", "full outfit campaign images"],
+  "camera_guidance": "Keep the model cleanly separated from the background while preserving location context.",
+  "depth_of_field": "moderate depth of field",
+  "avoid": ["busy backgrounds", "tilted vertical lines unless intentional"]
+}
+

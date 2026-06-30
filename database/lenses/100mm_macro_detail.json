@@ -1,0 +1,11 @@
+{
+  "id": "100mm_macro_detail",
+  "name": "100mm Macro Detail",
+  "focal_length": "100mm macro",
+  "look": "precise, tactile, detail-focused",
+  "best_for": ["fabric texture", "stitching", "hardware", "jewelry and accessories"],
+  "camera_guidance": "Place exact focus on the garment detail and use soft controlled light to reveal texture.",
+  "depth_of_field": "shallow depth of field",
+  "avoid": ["unreadable blur", "harsh glare", "dirty fabric or fingerprints"]
+}
+

@@ -1,0 +1,11 @@
+{
+  "id": "50mm_clean_commercial",
+  "name": "50mm Clean Commercial",
+  "focal_length": "50mm",
+  "look": "balanced, natural, product-readable",
+  "best_for": ["ecommerce", "lookbook", "three-quarter outfit views"],
+  "camera_guidance": "Use eye-level or chest-level framing for accurate proportions and clear garment shape.",
+  "depth_of_field": "controlled depth of field",
+  "avoid": ["excessive compression", "overly dramatic perspective"]
+}
+

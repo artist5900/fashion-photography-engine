@@ -1,0 +1,11 @@
+{
+  "id": "85mm_premium_portrait",
+  "name": "85mm Premium Portrait",
+  "focal_length": "85mm",
+  "look": "compressed, refined, premium portrait feel",
+  "best_for": ["beauty fashion", "accessory focus", "upper body crops"],
+  "camera_guidance": "Use flattering distance, sharp focus on face or product detail, and soft background separation.",
+  "depth_of_field": "shallow to moderate depth of field",
+  "avoid": ["missing focus on eyes or product", "excessive background blur that hides context"]
+}
+

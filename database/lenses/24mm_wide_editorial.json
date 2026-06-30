@@ -1,0 +1,11 @@
+{
+  "id": "24mm_wide_editorial",
+  "name": "24mm Wide Editorial",
+  "focal_length": "24mm",
+  "look": "wide, energetic, environmental",
+  "best_for": ["low angle hero shots", "streetwear", "location-heavy campaign images"],
+  "camera_guidance": "Use close-to-medium distance with careful edge control to avoid distorted limbs.",
+  "depth_of_field": "moderate depth of field",
+  "avoid": ["placing hands or feet too close to frame edges", "uncontrolled facial distortion"]
+}
+
