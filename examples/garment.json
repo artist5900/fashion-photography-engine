@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "source_images": [
+    {
+      "path": "examples/garment_images/oversized_black_washed_denim_jacket_front_button_chest_pockets.jpg",
+      "view": "front",
+      "exists": false
+    },
+    {
+      "path": "examples/garment_images/oversized_black_washed_denim_jacket_back_panel_seams.jpg",
+      "view": "back",
+      "exists": false
+    },
+    {
+      "path": "examples/garment_images/black_denim_jacket_frayed_cuff_detail.jpg",
+      "view": "detail",
+      "exists": false
+    }
+  ],
+  "garment": {
+    "category": "jacket",
+    "color": [
+      "black"
+    ],
+    "material": [
+      "denim"
+    ],
+    "fit": "oversized",
+    "silhouette": "boxy",
+    "construction": [
+      "panel seams"
+    ],
+    "collar": "point collar",
+    "sleeve": "long sleeve",
+    "closure": "button front",
+    "pocket": [
+      "chest pockets"
+    ],
+    "texture": [
+      "washed texture"
+    ],
+    "distressing": [
+      "frayed edges"
+    ],
+    "wash": "washed black",
+    "accessories": []
+  },
+  "parser": {
+    "name": "garment_parser_v1",
+    "method": "filename_and_manifest_rules",
+    "confidence": "medium",
+    "notes": [
+      "No vision model is used in v1.",
+      "Fields are inferred from image filenames and optional manifest notes."
+    ]
+  }
+}

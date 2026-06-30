@@ -1,0 +1,10 @@
+{
+  "product_id": "example_black_denim_jacket",
+  "images": [
+    "examples/garment_images/oversized_black_washed_denim_jacket_front_button_chest_pockets.jpg",
+    "examples/garment_images/oversized_black_washed_denim_jacket_back_panel_seams.jpg",
+    "examples/garment_images/black_denim_jacket_frayed_cuff_detail.jpg"
+  ],
+  "notes": "Oversized black washed denim jacket with button front, point collar, long sleeves, chest pockets, panel seams, frayed cuff detail, and boxy silhouette."
+}
+
