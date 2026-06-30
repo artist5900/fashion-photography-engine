@@ -1,0 +1,15 @@
+{
+  "id": "three-quarter-lookbook-walk",
+  "name": "Three-Quarter Lookbook Walk",
+  "category": "lookbook",
+  "commercial_use": "Seasonal lookbook, collection page, product storytelling",
+  "visual_goal": "Show fit, drape, and movement while keeping the outfit commercially clear.",
+  "composition": "Three-quarter full-body frame with the model walking into the camera line.",
+  "model_direction": "Walk naturally with one foot crossing slightly forward, arms relaxed, gaze just past camera.",
+  "styling_notes": "Use footwear and accessories that support the outfit without stealing attention.",
+  "lighting": "Soft directional light with gentle contrast to define fabric texture.",
+  "camera_language": "70mm lens look, slight background compression, fast shutter feel with natural movement.",
+  "prompt": "Professional fashion lookbook photograph of a model walking in a three-quarter full-body view, outfit moving naturally, refined styling, clean background, soft directional lighting, elegant commercial mood, clear garment shape and fabric drape.",
+  "negative_prompt": "awkward walking pose, blurred face, tangled clothing, exaggerated motion blur, warped legs, noisy image"
+}
+

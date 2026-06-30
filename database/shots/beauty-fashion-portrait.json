@@ -1,0 +1,15 @@
+{
+  "id": "beauty-fashion-portrait",
+  "name": "Beauty Fashion Portrait",
+  "category": "portrait",
+  "commercial_use": "Beauty-fashion campaign, brand editorial, social hero image",
+  "visual_goal": "Balance face, makeup, hair, and upper-body styling in a polished fashion portrait.",
+  "composition": "Chest-up or shoulder-up portrait with clean framing and visible styling details.",
+  "model_direction": "Hold a calm expression, elongated neck, soft jawline, eyes connected to camera or slightly off-camera.",
+  "styling_notes": "Makeup, hair, jewelry, neckline, and fabric should work as one clear visual system.",
+  "lighting": "Large soft beauty light with gentle catchlights and smooth skin texture.",
+  "camera_language": "85mm to 105mm portrait lens look, shallow but controlled depth of field.",
+  "prompt": "Professional beauty fashion portrait of a model with refined hair, makeup, and upper-body styling, soft beauty lighting, clean composition, premium skin texture, elegant expression, commercial editorial mood.",
+  "negative_prompt": "plastic skin, heavy retouching, crossed eyes, messy hair, distorted jewelry, unbalanced makeup, low-detail face"
+}
+

@@ -1,0 +1,15 @@
+{
+  "id": "monochrome-studio-silhouette",
+  "name": "Monochrome Studio Silhouette",
+  "category": "campaign",
+  "commercial_use": "Premium campaign, collection mood image, editorial landing page",
+  "visual_goal": "Create a graphic fashion image focused on shape, silhouette, and attitude.",
+  "composition": "Full-body or three-quarter frame against a monochrome studio set with strong silhouette readability.",
+  "model_direction": "Use a sculptural standing pose with one angular line through the arms, shoulders, or legs.",
+  "styling_notes": "Choose garments with a strong outline, structured shoulders, volume, or distinctive hem.",
+  "lighting": "Controlled studio light with soft edge contrast and clean separation from background.",
+  "camera_language": "50mm lens look, low visual clutter, high-end campaign framing.",
+  "prompt": "High-end monochrome studio fashion photograph of a model in a sculptural pose, strong garment silhouette, clean tonal background, controlled studio lighting, graphic premium campaign mood, elegant shape and refined styling.",
+  "negative_prompt": "flat silhouette, messy outline, background blending into garment, overprocessed contrast, distorted pose"
+}
+

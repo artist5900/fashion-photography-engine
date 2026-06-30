@@ -1,0 +1,15 @@
+{
+  "id": "luxury-accessory-handheld",
+  "name": "Luxury Accessory Handheld",
+  "category": "accessory",
+  "commercial_use": "Accessory campaign, product detail, luxury social creative",
+  "visual_goal": "Make a bag, jewelry item, eyewear piece, or small accessory feel premium and desirable.",
+  "composition": "Medium closeup with the accessory held or worn naturally as the clear focal point.",
+  "model_direction": "Keep hands relaxed and elegant, body language quiet, face optional or softly cropped.",
+  "styling_notes": "Nails, sleeves, and nearby garments should support the accessory color and material.",
+  "lighting": "Soft controlled highlights to reveal shape, metal, leather, glass, or texture.",
+  "camera_language": "85mm lens look, shallow depth of field, premium product focus.",
+  "prompt": "Luxury fashion accessory photograph with a model holding or wearing the featured accessory, elegant hand placement, premium styling, soft controlled highlights, shallow depth of field, refined commercial product focus.",
+  "negative_prompt": "awkward fingers, damaged accessory, fake material, harsh reflections, cluttered crop, distorted hands"
+}
+

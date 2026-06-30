@@ -1,0 +1,15 @@
+{
+  "id": "ecommerce-back-view",
+  "name": "Ecommerce Back View",
+  "category": "ecommerce",
+  "commercial_use": "Product page gallery, fit reference, marketplace listing",
+  "visual_goal": "Show the back fit, seams, length, and silhouette with minimal styling noise.",
+  "composition": "Full-body back-facing frame on a plain studio background.",
+  "model_direction": "Stand straight with natural posture, arms slightly away from the body if needed.",
+  "styling_notes": "Hair should not cover important back details; garment hem and seams should be visible.",
+  "lighting": "Even studio lighting with enough side definition to show shape.",
+  "camera_language": "70mm lens look, eye-level camera, neutral ecommerce perspective.",
+  "prompt": "Clean ecommerce fashion photograph of a model wearing the featured garment from the back view, full-body studio composition, plain background, even lighting, accurate fit and silhouette, clear seams and garment length.",
+  "negative_prompt": "twisted posture, hidden back details, wrinkled garment, uneven hem, dramatic shadows, distracting styling"
+}
+

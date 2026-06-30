@@ -1,0 +1,15 @@
+{
+  "id": "commercial-hero-front-view",
+  "name": "Commercial Hero Front View",
+  "category": "campaign",
+  "commercial_use": "Homepage hero, campaign launch, paid social creative",
+  "visual_goal": "Show the full outfit clearly while creating a confident brand-first image.",
+  "composition": "Full-body front-facing composition, model centered, clean negative space around the silhouette.",
+  "model_direction": "Stand tall with relaxed shoulders, one subtle weight shift, direct but calm expression.",
+  "styling_notes": "Garment should be fully visible, steamed, properly fitted, and free of distracting accessories.",
+  "lighting": "Large soft key light from the front-left, gentle fill, controlled shadow under the feet.",
+  "camera_language": "50mm lens look, eye-level camera, crisp focus, natural proportions.",
+  "prompt": "Professional commercial fashion photography of a model wearing the featured outfit, full-body front view, centered composition, clean studio background, soft premium lighting, confident calm expression, sharp garment detail, polished campaign image.",
+  "negative_prompt": "distorted body, extra limbs, messy fabric, harsh shadows, overexposed skin, low-resolution, cluttered background, cartoon style"
+}
+

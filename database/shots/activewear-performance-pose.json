@@ -1,0 +1,15 @@
+{
+  "id": "activewear-performance-pose",
+  "name": "Activewear Performance Pose",
+  "category": "activewear",
+  "commercial_use": "Activewear campaign, fitness ecommerce, performance social ad",
+  "visual_goal": "Show stretch, support, mobility, and athletic confidence.",
+  "composition": "Full-body dynamic pose with clear view of garment fit and functional panels.",
+  "model_direction": "Hold an athletic lunge, stretch, jump prep, or controlled movement pose with strong posture.",
+  "styling_notes": "Keep styling functional and clean; shoes and accessories should match the activity.",
+  "lighting": "Bright directional light with crisp shape and healthy skin tone.",
+  "camera_language": "35mm to 50mm lens look, low-to-eye-level camera, energetic but controlled framing.",
+  "prompt": "Professional activewear fashion photograph of an athletic model in a controlled performance pose, full-body composition, clear garment fit, functional stretch and support visible, bright directional lighting, premium fitness campaign style.",
+  "negative_prompt": "unsafe pose, strained expression, warped joints, baggy fit, excessive sweat, cluttered gym background"
+}
+

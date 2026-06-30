@@ -1,0 +1,15 @@
+{
+  "id": "fabric-detail-closeup",
+  "name": "Fabric Detail Closeup",
+  "category": "product-detail",
+  "commercial_use": "Product detail gallery, luxury material storytelling, PDP support image",
+  "visual_goal": "Highlight fabric texture, stitching, buttons, hardware, or construction quality.",
+  "composition": "Tight crop on garment detail with enough context to understand where it sits on the body.",
+  "model_direction": "Hold still, hands placed naturally if they help frame the detail.",
+  "styling_notes": "Fabric must be clean, lint-free, and arranged to show craftsmanship.",
+  "lighting": "Soft raking light across the fabric surface to reveal texture without harsh glare.",
+  "camera_language": "Macro or 85mm close-focus look, shallow depth of field, precise focus on the detail.",
+  "prompt": "High-end fashion product detail closeup showing fabric texture and garment construction, precise focus on stitching and material quality, soft raking studio light, premium commercial photography, elegant shallow depth of field.",
+  "negative_prompt": "dirty fabric, loose threads, plastic texture, excessive blur, harsh glare, unreadable detail, artificial shine"
+}
+

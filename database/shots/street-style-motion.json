@@ -1,0 +1,15 @@
+{
+  "id": "street-style-motion",
+  "name": "Street Style Motion",
+  "category": "lifestyle",
+  "commercial_use": "Social ads, lifestyle campaign, collection storytelling",
+  "visual_goal": "Make the outfit feel wearable, current, and active in a real-world setting.",
+  "composition": "Full-body or three-quarter frame captured mid-step on an urban street.",
+  "model_direction": "Move naturally, look to the side or slightly past camera, keep posture confident.",
+  "styling_notes": "Use practical accessories that make the outfit feel lived-in but still polished.",
+  "lighting": "Natural daylight or soft overcast light, balanced skin tones, no harsh distractions.",
+  "camera_language": "35mm street photography look, slight environmental context, crisp subject focus.",
+  "prompt": "Professional street style fashion photograph of a model wearing the featured outfit while walking through a clean urban setting, natural movement, polished styling, soft daylight, modern lifestyle campaign mood, sharp garment visibility.",
+  "negative_prompt": "busy background, random pedestrians distracting, motion-smudged clothing, unflattering angle, distorted architecture"
+}
+

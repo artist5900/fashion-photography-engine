@@ -1,0 +1,15 @@
+{
+  "id": "seated-editorial-pose",
+  "name": "Seated Editorial Pose",
+  "category": "editorial",
+  "commercial_use": "Editorial campaign, brand story page, social launch creative",
+  "visual_goal": "Create a stylish editorial image that still keeps the outfit legible.",
+  "composition": "Medium-wide seated frame with angular body lines and visible garment structure.",
+  "model_direction": "Sit with one knee forward, torso slightly turned, hands relaxed, expression composed.",
+  "styling_notes": "Choose seating that matches the brand mood and does not hide key garment details.",
+  "lighting": "Soft side light with controlled contrast and subtle shadow shape.",
+  "camera_language": "50mm to 85mm lens look, slightly lower camera height, editorial depth.",
+  "prompt": "Editorial fashion photograph of a model seated in a composed pose, outfit clearly visible, refined styling, soft side lighting, tasteful shadows, modern commercial magazine mood, elegant body lines and premium garment detail.",
+  "negative_prompt": "slouched awkward pose, hidden clothing, cluttered set, overdramatic makeup, distorted hands, low-quality editorial"
+}
+
