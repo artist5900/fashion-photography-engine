@@ -45,6 +45,106 @@ GARMENT_RULES = {
     "accessory": ["detail", "hand", "85mm", "macro", "luxury"],
 }
 
+SHOT_CATEGORY_RULES = {
+    "walking": ["walk", "walking", "street style", "motion", "stride"],
+    "back": ["back", "rear", "over shoulder"],
+    "front": ["front", "hero", "full outfit", "commercial hero", "ecommerce"],
+    "seated": ["seated", "sit"],
+    "group": ["group"],
+    "active": ["active", "performance", "lunge", "jump"],
+    "flat_lay": ["flat lay", "product arranged"],
+    "detail": ["detail", "close", "macro", "hand", "fabric", "accessory"],
+}
+
+POSE_COMPATIBILITY = {
+    "detail": {
+        "prefer": ["detail", "cuff", "collar", "hand", "waistband", "bag"],
+        "avoid": ["walk", "lunge", "jump", "full", "floor", "group"],
+    },
+    "walking": {
+        "prefer": ["walk", "walking", "stride", "profile"],
+        "avoid": ["seated", "sit", "floor", "detail", "cuff"],
+    },
+    "back": {
+        "prefer": ["over shoulder", "face away", "away from camera", "back mostly"],
+        "avoid": ["front", "walk", "cuff", "hair", "back leg"],
+    },
+    "front": {
+        "prefer": ["front", "relaxed", "pocket", "three", "confident", "ankle"],
+        "avoid": ["cuff", "detail", "back", "floor", "hair"],
+    },
+    "seated": {
+        "prefer": ["seated", "sit", "floor"],
+        "avoid": ["walk", "lunge", "jump", "back"],
+    },
+    "group": {
+        "prefer": ["group", "staggered"],
+        "avoid": ["detail", "cuff", "face"],
+    },
+    "flat_lay": {
+        "prefer": ["product", "not applicable"],
+        "avoid": ["walk", "seated", "face", "hair", "lunge"],
+    },
+    "active": {
+        "prefer": ["active", "lunge", "jump", "performance"],
+        "avoid": ["seated", "floor", "cuff", "back"],
+    },
+}
+
+LENS_COMPATIBILITY = {
+    "detail": {
+        "prefer": ["macro", "85mm", "100mm", "detail", "portrait"],
+        "avoid": ["24mm", "wide"],
+    },
+    "walking": {
+        "prefer": ["35mm", "50mm", "environmental"],
+        "avoid": ["macro", "100mm"],
+    },
+    "back": {
+        "prefer": ["50mm", "70mm", "commercial"],
+        "avoid": ["macro", "24mm"],
+    },
+    "front": {
+        "prefer": ["50mm", "35mm", "commercial", "environmental"],
+        "avoid": ["macro", "100mm"],
+    },
+    "seated": {
+        "prefer": ["50mm", "85mm", "portrait"],
+        "avoid": ["24mm", "macro"],
+    },
+    "group": {
+        "prefer": ["24mm", "35mm", "wide", "environmental"],
+        "avoid": ["macro", "100mm"],
+    },
+    "flat_lay": {
+        "prefer": ["35mm", "50mm", "commercial"],
+        "avoid": ["85mm", "portrait"],
+    },
+    "active": {
+        "prefer": ["35mm", "50mm", "environmental"],
+        "avoid": ["macro", "100mm"],
+    },
+}
+
+CAMPAIGN_SCENE_COMPATIBILITY = {
+    "lookbook": {
+        "prefer": ["studio", "street", "urban", "gallery", "apartment", "rooftop"],
+        "avoid": ["hotel", "mirror"],
+    },
+    "campaign": {
+        "prefer": ["rooftop", "gallery", "industrial", "black", "urban", "coastal"],
+        "avoid": ["fitting"],
+    },
+    "ecommerce": {
+        "prefer": ["white", "studio", "colorama"],
+        "avoid": ["street", "industrial", "hotel", "mirror"],
+    },
+    "social": {
+        "prefer": ["street", "urban", "mirror", "rooftop", "apartment"],
+        "avoid": ["white studio"],
+    },
+}
+
 
 def load_json(path: Path) -> dict[str, Any]:
     with path.open("r", encoding="utf-8") as f:
@@ -113,6 +213,15 @@ def score_record(record: dict[str, Any], keywords: list[str]) -> int:
     return score
 
 
+def keyword_score(blob: str, keywords: list[str], weight: int) -> int:
+    score = 0
+    for keyword in keywords:
+        normalized = keyword.lower().replace("_", " ")
+        if normalized and normalized in blob:
+            score += weight
+    return score
+
+
 def ranked_records(collection: str, keywords: list[str]) -> list[dict[str, Any]]:
     records = load_records(collection)
     return sorted(
@@ -120,6 +229,52 @@ def ranked_records(collection: str, keywords: list[str]) -> list[dict[str, Any]]
         key=lambda record: (score_record(record, keywords), str(record.get("id", ""))),
         reverse=True,
     )
+
+
+def classify_shot(shot: dict[str, Any]) -> str:
+    fields = [
+        shot.get("id"),
+        shot.get("name"),
+        shot.get("category"),
+        shot.get("purpose"),
+        shot.get("commercial_use"),
+        shot.get("visual_goal"),
+    ]
+    blob = " ".join(str(field) for field in fields if field).lower().replace("_", " ")
+    for category, keywords in SHOT_CATEGORY_RULES.items():
+        if any(keyword in blob for keyword in keywords):
+            return category
+    return "front"
+
+
+def compatibility_score(record: dict[str, Any], compatibility: dict[str, list[str]]) -> int:
+    blob = text_blob(record)
+    score = keyword_score(blob, compatibility.get("prefer", []), 8)
+    score -= keyword_score(blob, compatibility.get("avoid", []), 12)
+    return score
+
+
+def choose_compatible_record(
+    records: list[dict[str, Any]],
+    keywords: list[str],
+    compatibility: dict[str, list[str]],
+    used_ids: set[str],
+) -> dict[str, Any]:
+    ranked = sorted(
+        records,
+        key=lambda record: (
+            compatibility_score(record, compatibility),
+            score_record(record, keywords),
+            str(record.get("id", "")),
+        ),
+        reverse=True,
+    )
+    for record in ranked:
+        record_id = str(record.get("id", ""))
+        if record_id not in used_ids:
+            used_ids.add(record_id)
+            return record
+    return ranked[0]
 
 
 def pick(items: list[dict[str, Any]], index: int) -> dict[str, Any]:
@@ -149,10 +304,11 @@ def plan_reason(
     garment: str,
 ) -> str:
     shot_goal = shot.get("purpose") or shot.get("visual_goal") or "supports the shot plan"
+    shot_category = classify_shot(shot)
     return (
-        f"Ranked for {campaign_type} because {shot.get('name')} supports this goal: "
-        f"{str(shot_goal).lower()} {pose.get('name')} keeps the garment readable, "
-        f"{lens.get('name')} fits the framing, and {scene.get('name')} supports the mood for {garment}."
+        f"Ranked for {campaign_type} as a {shot_category} shot because {shot.get('name')} supports this goal: "
+        f"{str(shot_goal).lower()} {pose.get('name')} matches the shot type, "
+        f"{lens.get('name')} fits the framing, and {scene.get('name')} supports the campaign mood for {garment}."
     )
 
 
@@ -201,12 +357,14 @@ def build_plan(request: dict[str, Any]) -> dict[str, Any]:
     keywords = request_keywords(garment, campaign_type, brand)
 
     shots = ranked_records("shots", keywords)
-    poses = ranked_records("poses", keywords)
-    lenses = ranked_records("lenses", keywords)
-    scenes = ranked_records("scenes", keywords)
+    poses = load_records("poses")
+    lenses = load_records("lenses")
+    scenes = load_records("scenes")
 
     recommendations = []
     used_shots = set()
+    used_poses: set[str] = set()
+    used_scenes: set[str] = set()
     shot_index = 0
     while len(recommendations) < count and shot_index < len(shots) * 2:
         shot = pick(shots, shot_index)
@@ -215,13 +373,35 @@ def build_plan(request: dict[str, Any]) -> dict[str, Any]:
             continue
         used_shots.add(shot.get("id"))
         rec_index = len(recommendations)
+        shot_category = classify_shot(shot)
+        pose = choose_compatible_record(
+            records=poses,
+            keywords=keywords,
+            compatibility=POSE_COMPATIBILITY.get(shot_category, POSE_COMPATIBILITY["front"]),
+            used_ids=used_poses,
+        )
+        lens = choose_compatible_record(
+            records=lenses,
+            keywords=keywords,
+            compatibility=LENS_COMPATIBILITY.get(shot_category, LENS_COMPATIBILITY["front"]),
+            used_ids=set(),
+        )
+        scene = choose_compatible_record(
+            records=scenes,
+            keywords=keywords,
+            compatibility=CAMPAIGN_SCENE_COMPATIBILITY.get(
+                campaign_type,
+                CAMPAIGN_SCENE_COMPATIBILITY["lookbook"],
+            ),
+            used_ids=used_scenes,
+        )
         recommendations.append(
             make_recommendation(
                 rank=rec_index + 1,
                 shot=shot,
-                pose=pick(poses, rec_index),
-                lens=pick(lenses, rec_index),
-                scene=pick(scenes, rec_index),
+                pose=pose,
+                lens=lens,
+                scene=scene,
                 campaign_type=campaign_type,
                 garment=garment,
             )

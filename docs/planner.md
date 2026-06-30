@@ -60,7 +60,21 @@ Planner v1 uses a simple scoring model:
 
 1. Load records from the existing databases.
 2. Build keywords from garment description, brand style, and campaign type.
-3. Score shots, poses, lenses, and scenes against those keywords.
-4. Combine the highest-ranking records into a readable shot plan.
+3. Score shots against those keywords.
+4. Classify each selected shot as front, walking, back, detail, seated, group, flat lay, or active.
+5. Choose a compatible pose and lens for that shot category.
+6. Choose a scene that fits the campaign type.
+7. Combine the matched records into a readable shot plan.
+
+## Compatibility Rules
+
+Planner matching is intentionally lightweight, but it prevents obvious mismatches:
+
+- Hero/front shots prefer relaxed, pocket, three-quarter, or confident standing poses.
+- Detail shots prefer cuff, collar, hand, waistband, bag, or other close-detail poses.
+- Walking shots prefer walking, stride, or profile walking poses.
+- Back shots prefer back-facing or over-shoulder poses.
+- Detail shots prefer macro or portrait-detail lenses; front and back shots prefer clean commercial lenses.
+- Campaign type influences scene selection, so ecommerce stays studio-oriented while lookbook and campaign plans can use richer locations.
 
 This keeps the planner modular and ready to connect with Garment Parser and Prompt Builder later.
