@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0",
+  "request": {
+    "garment": "oversized black washed denim jacket with button front, point collar, chest pockets, panel seams, frayed cuff detail, and boxy silhouette",
+    "brand_style": "youth_streetwear",
+    "campaign_type": "lookbook",
+    "count": 6
+  },
+  "brand": {
+    "id": "youth_streetwear",
+    "name": "Youth Streetwear",
+    "path": "database/brands/youth_streetwear.json"
+  },
+  "recommendations": [
+    {
+      "rank": 1,
+      "shot": {
+        "id": "street-style-motion",
+        "name": "Street Style Motion",
+        "path": "database/shots/street-style-motion.json"
+      },
+      "pose": {
+        "id": "05_natural_walk_forward",
+        "name": "Natural Walk Forward",
+        "direction": "Walk toward camera with a relaxed stride and arms moving naturally.",
+        "path": "database/poses/05_natural_walk_forward.json"
+      },
+      "lens": {
+        "id": "50mm_clean_commercial",
+        "name": "50mm Clean Commercial",
+        "path": "database/lenses/50mm_clean_commercial.json"
+      },
+      "scene": {
+        "id": "urban_tiled_bus_stop",
+        "name": "Urban Tiled Bus Stop",
+        "path": "database/scenes/urban_tiled_bus_stop.json"
+      },
+      "lighting": "Natural daylight or soft overcast light, balanced skin tones, no harsh distractions.",
+      "reason": "Ranked for lookbook because Street Style Motion supports this goal: make the outfit feel wearable, current, and active in a real-world setting. Natural Walk Forward keeps the garment readable, 50mm Clean Commercial fits the framing, and Urban Tiled Bus Stop supports the mood for oversized black washed denim jacket with button front, point collar, chest pockets, panel seams, frayed cuff detail, and boxy silhouette."
+    },
+    {
+      "rank": 2,
+      "shot": {
+        "id": "commercial-hero-front-view",
+        "name": "Commercial Hero Front View",
+        "path": "database/shots/commercial-hero-front-view.json"
+      },
+      "pose": {
+        "id": "10_cuff_detail_hold",
+        "name": "Cuff Detail Hold",
+        "direction": "Bring one wrist forward and gently touch the cuff or sleeve opening.",
+        "path": "database/poses/10_cuff_detail_hold.json"
+      },
+      "lens": {
+        "id": "35mm_environmental",
+        "name": "35mm Environmental Fashion",
+        "path": "database/lenses/35mm_environmental.json"
+      },
+      "scene": {
+        "id": "industrial_loading_bay",
+        "name": "Industrial Loading Bay",
+        "path": "database/scenes/industrial_loading_bay.json"
+      },
+      "lighting": "Large soft key light from the front-left, gentle fill, controlled shadow under the feet.",
+      "reason": "Ranked for lookbook because Commercial Hero Front View supports this goal: show the full outfit clearly while creating a confident brand-first image. Cuff Detail Hold keeps the garment readable, 35mm Environmental Fashion fits the framing, and Industrial Loading Bay supports the mood for oversized black washed denim jacket with button front, point collar, chest pockets, panel seams, frayed cuff detail, and boxy silhouette."
+    },
+    {
+      "rank": 3,
+      "shot": {
+        "id": "ecommerce-back-view",
+        "name": "Ecommerce Back View",
+        "path": "database/shots/ecommerce-back-view.json"
+      },
+      "pose": {
+        "id": "08_leaning_wall",
+        "name": "Leaning Wall",
+        "direction": "Lean one shoulder or back lightly against a wall with relaxed posture.",
+        "path": "database/poses/08_leaning_wall.json"
+      },
+      "lens": {
+        "id": "85mm_premium_portrait",
+        "name": "85mm Premium Portrait",
+        "path": "database/lenses/85mm_premium_portrait.json"
+      },
+      "scene": {
+        "id": "rooftop_daylight",
+        "name": "Rooftop Daylight",
+        "path": "database/scenes/rooftop_daylight.json"
+      },
+      "lighting": "Even studio lighting with enough side definition to show shape.",
+      "reason": "Ranked for lookbook because Ecommerce Back View supports this goal: show the back fit, seams, length, and silhouette with minimal styling noise. Leaning Wall keeps the garment readable, 85mm Premium Portrait fits the framing, and Rooftop Daylight supports the mood for oversized black washed denim jacket with button front, point collar, chest pockets, panel seams, frayed cuff detail, and boxy silhouette."
+    },
+    {
+      "rank": 4,
+      "shot": {
+        "id": "three-quarter-lookbook-walk",
+        "name": "Three-Quarter Lookbook Walk",
+        "path": "database/shots/three-quarter-lookbook-walk.json"
+      },
+      "pose": {
+        "id": "02_confident_pocket_hand",
+        "name": "Confident Pocket Hand",
+        "direction": "Stand with one hand near or inside pocket, one shoulder slightly dropped, direct gaze.",
+        "path": "database/poses/02_confident_pocket_hand.json"
+      },
+      "lens": {
+        "id": "24mm_wide_editorial",
+        "name": "24mm Wide Editorial",
+        "path": "database/lenses/24mm_wide_editorial.json"
+      },
+      "scene": {
+        "id": "black_studio_shadow",
+        "name": "Black Studio Shadow",
+        "path": "database/scenes/black_studio_shadow.json"
+      },
+      "lighting": "Soft directional light with gentle contrast to define fabric texture.",
+      "reason": "Ranked for lookbook because Three-Quarter Lookbook Walk supports this goal: show fit, drape, and movement while keeping the outfit commercially clear. Confident Pocket Hand keeps the garment readable, 24mm Wide Editorial fits the framing, and Black Studio Shadow supports the mood for oversized black washed denim jacket with button front, point collar, chest pockets, panel seams, frayed cuff detail, and boxy silhouette."
+    },
+    {
+      "rank": 5,
+      "shot": {
+        "id": "seated-editorial-pose",
+        "name": "Seated Editorial Pose",
+        "path": "database/shots/seated-editorial-pose.json"
+      },
+      "pose": {
+        "id": "09_collar_adjust",
+        "name": "Collar Adjust",
+        "direction": "Use one or both hands to lightly adjust collar, lapel, hood, or neckline.",
+        "path": "database/poses/09_collar_adjust.json"
+      },
+      "lens": {
+        "id": "100mm_macro_detail",
+        "name": "100mm Macro Detail",
+        "path": "database/lenses/100mm_macro_detail.json"
+      },
+      "scene": {
+        "id": "mirror_fitting_room",
+        "name": "Mirror Fitting Room",
+        "path": "database/scenes/mirror_fitting_room.json"
+      },
+      "lighting": "Soft side light with controlled contrast and subtle shadow shape.",
+      "reason": "Ranked for lookbook because Seated Editorial Pose supports this goal: create a stylish editorial image that still keeps the outfit legible. Collar Adjust keeps the garment readable, 100mm Macro Detail fits the framing, and Mirror Fitting Room supports the mood for oversized black washed denim jacket with button front, point collar, chest pockets, panel seams, frayed cuff detail, and boxy silhouette."
+    },
+    {
+      "rank": 6,
+      "shot": {
+        "id": "monochrome-studio-silhouette",
+        "name": "Monochrome Studio Silhouette",
+        "path": "database/shots/monochrome-studio-silhouette.json"
+      },
+      "pose": {
+        "id": "20_floor_sit_relaxed",
+        "name": "Floor Sit Relaxed",
+        "direction": "Sit on the floor with one leg bent and one extended, torso upright and composed.",
+        "path": "database/poses/20_floor_sit_relaxed.json"
+      },
+      "lens": {
+        "id": "50mm_clean_commercial",
+        "name": "50mm Clean Commercial",
+        "path": "database/lenses/50mm_clean_commercial.json"
+      },
+      "scene": {
+        "id": "concrete_gallery",
+        "name": "Concrete Gallery",
+        "path": "database/scenes/concrete_gallery.json"
+      },
+      "lighting": "Controlled studio light with soft edge contrast and clean separation from background.",
+      "reason": "Ranked for lookbook because Monochrome Studio Silhouette supports this goal: create a graphic fashion image focused on shape, silhouette, and attitude. Floor Sit Relaxed keeps the garment readable, 50mm Clean Commercial fits the framing, and Concrete Gallery supports the mood for oversized black washed denim jacket with button front, point collar, chest pockets, panel seams, frayed cuff detail, and boxy silhouette."
+    }
+  ]
+}
